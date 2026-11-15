@@ -1,0 +1,27 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Local runtime and generated files
+node_modules/
+.venv/
+venv/
+__pycache__/
+.cache/
+tmp/
+temp/
+logs/
+
+# Large media and exports
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+*.zip
+.DS_Store
+Thumbs.db
