@@ -119,6 +119,7 @@ No additional character. No human or humanoid shadow. Any shadow must be flat on
 let state={dailyDate:today(),daily:seed,library:[],schedule:[],metrics:[],publications:[]};
 try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved)state={...state,...saved}}catch(e){}
 let calDate=new Date(),selectedDate=today();
+async function loadGitHubPublications(){try{const res=await fetch('./data/publications.json?updated='+Date.now(),{cache:'no-store'});if(!res.ok)return;const payload=await res.json(),remote=Array.isArray(payload)?payload:(payload.publications||[]),local=state.publications||[],map=new Map();local.forEach(p=>map.set(String(p.id),p));remote.forEach(p=>map.set(String(p.id),{...map.get(String(p.id)),...p,source:'github'}));state.publications=[...map.values()];renderAll()}catch(err){console.warn('GitHub publication archive unavailable; using browser records.',err)}}
 function persist(){localStorage.setItem(KEY,JSON.stringify(state));renderAll()}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function allContent(){return [...state.daily,...state.library]}
@@ -155,5 +156,5 @@ $('removePubImage').addEventListener('click',()=>{pendingPubImage='';editingPubI
 $('cancelPubEdit').addEventListener('click',resetPublicationForm);
 $('publicationForm').addEventListener('submit',e=>{e.preventDefault();const id=$('publicationId').value,old=(state.publications||[]).find(p=>p.id===id),p={id:id||'publication-'+Date.now(),date:$('pubDate').value,title:$('pubTitle').value.trim(),url:$('pubUrl').value.trim(),caption:$('pubCaption').value.trim(),image:pendingPubImage||editingPubImage||(old&&old.image)||'',views:+$('pubViewsInput').value,likes:+$('pubLikesInput').value,comments:+$('pubCommentsInput').value,shares:+$('pubSharesInput').value,saves:+$('pubSavesInput').value};state.publications=state.publications||[];if(old)state.publications=state.publications.map(x=>x.id===id?p:x);else state.publications.push(p);resetPublicationForm();persist();switchTab('history')});
 
-renderAll();switchTab('overview');
+renderAll();switchTab('overview');loadGitHubPublications();
 </script></body></html>
