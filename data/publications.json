@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-15T07:00:00+01:00",
+  "updated_at": "2026-11-15T07:01:00+01:00",
   "publications": [
     {
       "id": "tiktok-ZTPDYNUFC",
@@ -109,6 +109,25 @@
       "thumbnail": "",
       "source": "TikTok Studio screenshot",
       "notes": "Title and scene description inferred from the visible thumbnail; no separate title or caption supplied."
+    },
+    {
+      "id": "tiktok-ZPLwDpLhg",
+      "date": "2026-10-31",
+      "time": "09:01",
+      "title": "The Purple Mushroom Library",
+      "scene": "A luminous purple mushroom rises in a mysterious forest library, surrounded by towering shelves and warm golden light",
+      "duration": "10.01 s",
+      "url": "https://www.tiktok.com/t/ZPLwDpLhg/",
+      "caption": "",
+      "views": 303,
+      "likes": 5,
+      "comments": 1,
+      "shares": 2,
+      "saves": 0,
+      "new_followers": 1,
+      "thumbnail": "",
+      "source": "TikTok Studio screenshot",
+      "notes": "Title and scene description inferred from the visible thumbnail; new followers recorded separately from the five standard engagement metrics."
     }
   ]
 }
