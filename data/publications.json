@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-15T06:52:00+01:00",
+  "updated_at": "2026-11-15T06:54:00+01:00",
   "publications": [
     {
       "id": "tiktok-ZTPDYNUFC",
@@ -37,6 +37,24 @@
       "thumbnail": "",
       "source": "TikTok Studio screenshot",
       "notes": "Title and scene description inferred from the thumbnail; no separate caption or video title was supplied."
+    },
+    {
+      "id": "tiktok-ZTPDYjU1T",
+      "date": "2026-10-29",
+      "time": "13:26",
+      "title": "Enchanted Forest Lights",
+      "scene": "A mysterious moonlit forest with glowing golden lights and violet mist",
+      "duration": "10.01 s",
+      "url": "https://www.tiktok.com/t/ZTPDYjU1T/",
+      "caption": "",
+      "views": 301,
+      "likes": 3,
+      "comments": 0,
+      "shares": 0,
+      "saves": 0,
+      "thumbnail": "",
+      "source": "TikTok Studio screenshot",
+      "notes": "Title and scene description inferred from the visible thumbnail; no separate title or caption supplied."
     }
   ]
 }
