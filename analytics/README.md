@@ -5,7 +5,7 @@ Purple, standalone analytics dashboard for **@cheshire193**.
 ## Open the dashboard
 After enabling GitHub Pages for the repository (Settings → Pages → Deploy from a branch → `main` → `/ (root)`), open:
 
-`https://krash9.github.io/cheshire-code-ai-factory/analytics/`
+`https://krash9.github.io/cheshire-code-ai-factory/`
 
 The dashboard is a static HTML page. It requires no API keys, paid services, database, or billing setup.
 
