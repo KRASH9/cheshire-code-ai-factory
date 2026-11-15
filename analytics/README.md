@@ -1,20 +1,21 @@
 # Analytics
 
-Keep a separate performance log for @cheshire193.
+Purple, standalone analytics dashboard for **@cheshire193**.
 
-## Per-post fields
-- post_id
-- published_at
-- post_url
-- format
-- story_theme
-- views
-- likes
-- comments
-- shares
-- saves (if available)
-- average_watch_time (if available)
-- completion_rate (if available)
-- captured_at
+## Open the dashboard
+After enabling GitHub Pages for the repository (Settings → Pages → Deploy from a branch → `main` → `/ (root)`), open:
 
-Only record metrics actually supplied by TikTok or the account owner. Mark unavailable values as unknown; do not estimate them.
+`https://krash9.github.io/cheshire-code-ai-factory/analytics/`
+
+The dashboard is a static HTML page. It requires no API keys, paid services, database, or billing setup.
+
+## How it works
+- Enter each video's published date, title/hook, theme, views, likes, comments, shares, and optional saves.
+- Summary cards calculate total views, total likes, engagement rate, video count, and average views.
+- The chart compares views across the latest 10 entries.
+- Export records to CSV or delete local records.
+
+## Important data note
+Entries are saved in the browser's local storage on the device/browser where they were entered. They are not automatically synced between devices and are not sent to GitHub or TikTok. Export a CSV backup periodically.
+
+Engagement rate is calculated as **(likes + comments + shares) ÷ views × 100**. Record only metrics actually shown by TikTok; do not estimate missing values.
