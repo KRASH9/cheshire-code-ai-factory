@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-15T06:49:00+01:00",
+  "updated_at": "2026-11-15T06:52:00+01:00",
   "publications": [
     {
       "id": "tiktok-ZTPDYNUFC",
@@ -19,6 +19,24 @@
       "thumbnail": "",
       "source": "TikTok Studio screenshot",
       "notes": "Title/scene description inferred from the visible thumbnail; no separate caption or video title was supplied."
+    },
+    {
+      "id": "tiktok-ZPLwDqJbs",
+      "date": "2026-10-29",
+      "time": "13:14",
+      "title": "Enchanted Mushrooms",
+      "scene": "A dark enchanted forest with glowing turquoise and violet mushrooms",
+      "duration": "10.01 s",
+      "url": "https://www.tiktok.com/t/ZPLwDqJbs/",
+      "caption": "",
+      "views": 315,
+      "likes": 4,
+      "comments": 0,
+      "shares": 0,
+      "saves": 0,
+      "thumbnail": "",
+      "source": "TikTok Studio screenshot",
+      "notes": "Title and scene description inferred from the thumbnail; no separate caption or video title was supplied."
     }
   ]
 }
