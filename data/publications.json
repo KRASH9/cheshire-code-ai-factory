@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-15T07:01:00+01:00",
+  "updated_at": "2026-11-15T07:04:00+01:00",
   "publications": [
     {
       "id": "tiktok-ZTPDYNUFC",
@@ -128,6 +128,25 @@
       "thumbnail": "",
       "source": "TikTok Studio screenshot",
       "notes": "Title and scene description inferred from the visible thumbnail; new followers recorded separately from the five standard engagement metrics."
+    },
+    {
+      "id": "tiktok-ZTPDYMQKs",
+      "date": "2026-10-31",
+      "time": "19:07",
+      "title": "The Crimson Forest",
+      "scene": "A mysterious forest at sunset, glowing with deep crimson and amber light, with a misty path between tall trees",
+      "duration": "8.31 s",
+      "url": "https://www.tiktok.com/t/ZTPDYMQKs/",
+      "caption": "",
+      "views": 298,
+      "likes": 5,
+      "comments": 0,
+      "shares": 1,
+      "saves": 2,
+      "new_followers": 0,
+      "thumbnail": "",
+      "source": "TikTok Studio screenshot",
+      "notes": "Title and scene description inferred from the visible thumbnail; no separate title or caption supplied."
     }
   ]
 }
