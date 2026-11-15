@@ -1,39 +1,35 @@
 # Cheshire Code AI Factory
 
-An independent content-production workspace for the TikTok account **@cheshire193**.
+An independent content-production workspace for the TikTok account @cheshire193.
 
 ## Mission
-Create consistent, atmospheric fantasy content built around Cheshire-inspired mystery, enchanted forests, portals, symbolic storytelling, and short-form visual narratives.
+Create original, cinematic 10-second TikTok videos in which one consistent royal, mystical Cheshire Cat speaks a short, memorable piece of wisdom in English. New ideas and scripts are actively researched and developed; the seven existing storylines remain part of the channel's history and do not restrict new concepts.
 
-## Project boundaries
-- This repository is separate from the MindSteel / Meta AI Video Factory project.
-- Content, prompts, analytics, and publishing settings for @cheshire193 stay isolated here.
-- No paid service or API is enabled by default.
-- The creator generates videos manually in Meta AI and publishes manually on TikTok.
-- Never commit credentials, access tokens, cookies, or private analytics exports.
+## Locked creative identity
+The same silver-grey cat, bright turquoise stripes and eyes, deep British bass / Received Pronunciation voice, desert world, purple-turquoise smoke and golden particles. The cat itself speaks; no narrator or second voice. See config/brand.md.
 
 ## Current workflow
-1. Use the Story Engine and prompt tools to prepare a concept, script, and Meta AI visual prompts.
-2. Create the video yourself in Meta AI.
-3. Review and publish it yourself on TikTok.
-4. Enter the real TikTok metrics in the [purple analytics dashboard](analytics/).
-5. Export CSV backups when needed.
+1. Research fresh topics, questions and conversations, or select an evergreen human theme.
+2. Develop original ideas, a concise English wisdom line and a 10-second scenario.
+3. Prepare Meta AI video prompt, cover prompt and English post package from prompts/.
+4. Create the video yourself in Meta AI.
+5. Review and publish it yourself on TikTok at the locked schedule.
+6. Enter real TikTok metrics in the purple analytics dashboard.
+7. Export CSV backups when needed.
 
 ## Analytics dashboard
-A standalone, purple-themed dashboard lives in `analytics/index.html`. It tracks views, likes, comments, shares, engagement rate, and video history. Data stays in the browser's local storage; there is no analytics API or paid backend.
+A standalone, purple-themed dashboard lives in analytics/index.html. It tracks views, likes, comments, shares, engagement rate, and video history. Data stays in the browser's local storage; there is no analytics API or paid backend.
 
-To publish it with GitHub Pages: open **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`. The dashboard will then be available at:
-
-`https://krash9.github.io/cheshire-code-ai-factory/`
+Public site: https://krash9.github.io/cheshire-code-ai-factory/
 
 ## Repository map
-- `config/` — brand and content configuration
-- `docs/` — architecture and operating notes
-- `prompts/` — reusable prompt templates
-- `story_engine/` — offline story draft generator
-- `content/` — approved scripts and production assets (large media should live outside Git)
-- `analytics/` — dashboard and metric documentation
-- `.env.example` — names of future environment variables; no secrets
+- config/ — locked brand and operating rules
+- docs/ — architecture and operating notes
+- prompts/ — research, idea generation, video, cover and post prompt templates
+- story_engine/ — legacy offline draft generator; prompt library is the creative source of truth
+- content/ — approved scripts and production assets (large media should live outside Git)
+- analytics/ — dashboard and metric documentation
+- .env.example — names of future environment variables; no secrets
 
 ## Safety and cost rules
 - Default monthly budget: €0.
