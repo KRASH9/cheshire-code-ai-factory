@@ -24,7 +24,7 @@ A standalone, purple-themed dashboard lives in `analytics/index.html`. It tracks
 
 To publish it with GitHub Pages: open **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`. The dashboard will then be available at:
 
-`https://krash9.github.io/cheshire-code-ai-factory/analytics/`
+`https://krash9.github.io/cheshire-code-ai-factory/`
 
 ## Repository map
 - `config/` — brand and content configuration
