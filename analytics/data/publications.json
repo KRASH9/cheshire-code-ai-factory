@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-15T06:58:00+01:00",
+  "updated_at": "2026-11-15T07:00:00+01:00",
   "publications": [
     {
       "id": "tiktok-ZTPDYNUFC",
@@ -88,6 +88,24 @@
       "comments": 2,
       "shares": 1,
       "saves": 0,
+      "thumbnail": "",
+      "source": "TikTok Studio screenshot",
+      "notes": "Title and scene description inferred from the visible thumbnail; no separate title or caption supplied."
+    },
+    {
+      "id": "tiktok-ZTPDYMDAQ",
+      "date": "2026-10-30",
+      "time": "09:31",
+      "title": "The Sunlit Enchanted Forest",
+      "scene": "A lush enchanted forest canopy opens to a soft golden beam of sunlight, with subtle purple flowers and moss",
+      "duration": "10.01 s",
+      "url": "https://www.tiktok.com/t/ZTPDYMDAQ/",
+      "caption": "",
+      "views": 279,
+      "likes": 2,
+      "comments": 0,
+      "shares": 0,
+      "saves": 1,
       "thumbnail": "",
       "source": "TikTok Studio screenshot",
       "notes": "Title and scene description inferred from the visible thumbnail; no separate title or caption supplied."
