@@ -19,3 +19,6 @@ The dashboard is a static HTML page. It requires no API keys, paid services, dat
 Entries are saved in the browser's local storage on the device/browser where they were entered. They are not automatically synced between devices and are not sent to GitHub or TikTok. Export a CSV backup periodically.
 
 Engagement rate is calculated as **(likes + comments + shares) ÷ views × 100**. Record only metrics actually shown by TikTok; do not estimate missing values.
+
+
+Deployment: GitHub Pages is configured to use GitHub Actions. Updates to this folder trigger a deployment workflow.
