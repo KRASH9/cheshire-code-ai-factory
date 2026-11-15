@@ -4,7 +4,7 @@
 **Audience:** Primarily UK women 25–34, then 35–44 | **Public language:** English
 
 ## Core concept
-One recurring character: a royal, mystical, wise Cheshire Cat who speaks one memorable thought. Cinematic wisdom, not a cartoon, cute-cat account, meme account or Disney-like interpretation. Quiet, powerful, mysterious and symbolic.
+One recurring character: a royal, mystical, wise Cheshire Cat who speaks original, memorable wisdom. Cinematic wisdom, not a cartoon, cute-cat account, meme account or Disney-like interpretation. Quiet, powerful, mysterious and symbolic. New ideas and scenarios are actively encouraged; the seven existing series are history, not a limit.
 
 ## Locked hero — never redesign
 - Grey / silver fur only; never blue.
