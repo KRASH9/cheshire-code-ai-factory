@@ -18,7 +18,7 @@ The same silver-grey cat, bright turquoise stripes and eyes, deep British bass /
 7. Export CSV backups when needed.
 
 ## Analytics dashboard
-A standalone, purple-themed dashboard lives in analytics/index.html. It tracks views, likes, comments, shares, engagement rate, and video history. Data stays in the browser's local storage; there is no analytics API or paid backend.
+A standalone, purple-themed dashboard lives in analytics/index.html. It tracks views, likes, comments, shares, saves, engagement rate, and publication history. The dashboard reads assistant-entered publication records from data/publications.json in GitHub, so records committed by the assistant appear across devices after the Pages site refreshes. Browser-local editing is also available. See docs/tiktok-publication-intake.md for the link + screenshot intake workflow. There is no analytics API or paid backend.
 
 Public site: https://krash9.github.io/cheshire-code-ai-factory/
 
