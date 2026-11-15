@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cheshire Code — Analytics</title>
+<style>
+:root{color-scheme:dark;--bg:#0d0915;--panel:#171023;--panel2:#20152f;--line:#38264d;--muted:#a99bb9;--text:#f7f0ff;--purple:#a66bff;--pink:#d58cff;--green:#79e0b0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#3a1c5b 0,transparent 38%),var(--bg);color:var(--text);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:32px 22px 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:13px}.mark{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#8b4ce0,#d28aff);display:grid;place-items:center;font-size:24px;box-shadow:0 8px 30px #8c4be744}.eyebrow{color:#c59cff;text-transform:uppercase;letter-spacing:.18em;font-size:10px;font-weight:800}.brand h1{font-size:20px;margin:2px 0 0;letter-spacing:-.04em}.topnote{color:var(--muted);font-size:12px}.hero{display:flex;justify-content:space-between;align-items:end;margin:22px 0 22px;gap:16px}.hero h2{font-size:clamp(27px,4vw,38px);letter-spacing:-.055em;margin:5px 0}.hero p{margin:0;color:var(--muted)}button,.button{border:1px solid #6d4597;background:linear-gradient(135deg,#8c4bd5,#6332a4);color:white;border-radius:11px;padding:10px 15px;font-weight:700;cursor:pointer}button.secondary{background:#211630;border-color:var(--line);color:#e8d9fa}button:hover{filter:brightness(1.13)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.card{background:linear-gradient(145deg,#1c1429,#130e1e);border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:0 12px 35px #0002}.metric-label{color:var(--muted);font-size:12px}.metric{font-size:28px;font-weight:800;letter-spacing:-.05em;margin:8px 0 2px}.metric-sub{color:#c29be9;font-size:11px}.section{margin-top:18px}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:12px}.section h3{margin:0;font-size:15px}.chartbox{height:230px;position:relative}.chartbox svg{width:100%;height:100%;overflow:visible}.chart-grid{stroke:#392a4b;stroke-dasharray:4 6}.chart-label{fill:#a99bb9;font-size:10px}.chart-line{fill:none;stroke:#bb83ff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.chart-area{fill:url(#area)}.twocol{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}.formgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.field label{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}.field input,.field select{width:100%;background:#100b19;border:1px solid #443255;border-radius:9px;color:var(--text);padding:10px;outline:none}.field input:focus,.field select:focus{border-color:var(--purple)}.form-actions{display:flex;gap:8px;align-items:end}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:650px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid #30233e}th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}td{font-size:12px}.pill{display:inline-block;padding:4px 8px;border-radius:99px;background:#392454;color:#d9baff;font-size:10px}.empty{text-align:center;color:var(--muted);padding:30px}.foot{margin-top:18px;color:#897b98;font-size:11px;text-align:center}.tools{display:flex;gap:8px;flex-wrap:wrap}.tiny{font-size:11px;color:var(--muted)}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.twocol{grid-template-columns:1fr}.formgrid{grid-template-columns:repeat(2,1fr)}.hero{align-items:start;flex-direction:column}}@media(max-width:460px){.wrap{padding:22px 14px 40px}.grid{gap:8px}.card{padding:14px}.metric{font-size:24px}.formgrid{grid-template-columns:1fr 1fr}.topnote{display:none}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div class="brand"><div class="mark">♟</div><div><div class="eyebrow">CHESHIRE CODE / @cheshire193</div><h1>Creator Analytics</h1></div></div><div class="topnote">PURPLE EDITION · PRIVATE LOCAL DASHBOARD</div></header>
+<section class="hero"><div><div class="eyebrow">Performance overview</div><h2>Make every story count.</h2><p>Track your TikTok videos, spot patterns, and learn what keeps viewers watching.</p></div><div class="tools"><button class="secondary" id="export">Export CSV</button><button id="clear">Reset data</button></div></section>
+<section class="grid">
+<div class="card"><div class="metric-label">Total views</div><div class="metric" id="views">0</div><div class="metric-sub">Across tracked videos</div></div>
+<div class="card"><div class="metric-label">Total likes</div><div class="metric" id="likes">0</div><div class="metric-sub">Audience reactions</div></div>
+<div class="card"><div class="metric-label">Engagement rate</div><div class="metric" id="engagement">0%</div><div class="metric-sub">(Likes + comments + shares) / views</div></div>
+<div class="card"><div class="metric-label">Videos tracked</div><div class="metric" id="count">0</div><div class="metric-sub">Manual TikTok snapshots</div></div>
+</section>
+<section class="twocol section">
+<div class="card"><div class="section-head"><h3>Views by video</h3><span class="pill">Latest 10 entries</span></div><div class="chartbox" id="chart"><div class="empty">Add your first video to see the chart.</div></div></div>
+<div class="card"><div class="section-head"><h3>Top performer</h3></div><div class="metric" id="topviews">—</div><div class="metric-sub" id="topname">No data yet</div><div style="height:16px"></div><div class="tiny">Average views per video</div><div class="metric" id="average">0</div><div class="tiny">Data is stored in this browser only. It is not sent to a server.</div></div>
+</section>
+<section class="card section"><div class="section-head"><h3>Add video snapshot</h3><span class="tiny">Enter numbers from TikTok analytics</span></div>
+<form id="entry"><div class="formgrid">
+<div class="field"><label for="title">Video title / hook</label><input id="title" required placeholder="The door that should not open"></div>
+<div class="field"><label for="date">Published date</label><input id="date" type="date" required></div>
+<div class="field"><label for="theme">Story theme</label><select id="theme"><option>Mystery</option><option>Wonder</option><option>Eerie</option><option>Other</option></select></div>
+<div class="field"><label for="viewsInput">Views</label><input id="viewsInput" type="number" min="0" value="0" required></div>
+<div class="field"><label for="likesInput">Likes</label><input id="likesInput" type="number" min="0" value="0"></div>
+<div class="field"><label for="commentsInput">Comments</label><input id="commentsInput" type="number" min="0" value="0"></div>
+<div class="field"><label for="sharesInput">Shares</label><input id="sharesInput" type="number" min="0" value="0"></div>
+<div class="field"><label for="savesInput">Saves (optional)</label><input id="savesInput" type="number" min="0" value="0"></div>
+</div><div class="form-actions" style="margin-top:12px"><button type="submit">＋ Save snapshot</button><span class="tiny">You can add updated snapshots as separate entries.</span></div></form></section>
+<section class="card section"><div class="section-head"><h3>Video history</h3><span class="tiny" id="rowcount">0 records</span></div><div class="tablewrap"><table><thead><tr><th>Date</th><th>Video / hook</th><th>Theme</th><th>Views</th><th>Likes</th><th>Comments</th><th>Shares</th><th>ER</th><th></th></tr></thead><tbody id="rows"><tr><td colspan="9" class="empty">No videos recorded yet.</td></tr></tbody></table></div></section>
+<div class="foot">CHESHIRE CODE · BUILT FOR MANUAL CREATOR ANALYTICS · NO API · NO BILLING</div>
+</main>
+<script>
+const KEY='cheshire-code-analytics-v1';let items=[];try{items=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){items=[]}
+const $=id=>document.getElementById(id),fmt=n=>Number(n||0).toLocaleString('en-US'),pct=(a,b)=>b?((a/b)*100).toFixed(1)+'%':'0%';
+function save(){localStorage.setItem(KEY,JSON.stringify(items));render()}
+function render(){
+ const sum=k=>items.reduce((a,x)=>a+Number(x[k]||0),0),v=sum('views'),l=sum('likes'),c=sum('comments'),s=sum('shares');
+ $('views').textContent=fmt(v);$('likes').textContent=fmt(l);$('engagement').textContent=pct(l+c+s,v);$('count').textContent=fmt(items.length);$('average').textContent=fmt(items.length?Math.round(v/items.length):0);$('rowcount').textContent=items.length+' records';
+ const top=[...items].sort((a,b)=>b.views-a.views)[0];$('topviews').textContent=top?fmt(top.views):'—';$('topname').textContent=top?top.title:'No data yet';
+ $('rows').innerHTML=items.length?[...items].reverse().map(x=>'<tr><td>'+esc(x.date)+'</td><td>'+esc(x.title)+'</td><td><span class="pill">'+esc(x.theme)+'</span></td><td>'+fmt(x.views)+'</td><td>'+fmt(x.likes)+'</td><td>'+fmt(x.comments)+'</td><td>'+fmt(x.shares)+'</td><td>'+pct(x.likes+x.comments+x.shares,x.views)+'</td><td><button class="secondary" data-del="'+x.id+'" style="padding:5px 8px">×</button></td></tr>').join(''):'<tr><td colspan="9" class="empty">No videos recorded yet.</td></tr>';
+ drawChart();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
+function drawChart(){const a=items.slice(-10);if(!a.length){$('chart').innerHTML='<div class="empty">Add your first video to see the chart.</div>';return}
+ const W=620,H=210,L=42,R=12,T=12,B=30,max=Math.max(1,...a.map(x=>x.views)),x=i=>L+(a.length===1?(W-L-R)/2:i*(W-L-R)/(a.length-1)),y=n=>H-B-(n/max)*(H-T-B);
+ let grid='';for(let i=0;i<4;i++){let yy=T+i*(H-T-B)/3;grid+='<line class="chart-grid" x1="'+L+'" y1="'+yy+'" x2="'+(W-R)+'" y2="'+yy+'"/><text class="chart-label" x="'+(L-8)+'" y="'+(yy+4)+'" text-anchor="end">'+fmt(Math.round(max*(1-i/3)))+'</text>'}
+ let pts=a.map((d,i)=>x(i)+','+y(d.views)).join(' '),area='M '+x(0)+' '+(H-B)+' L '+pts.replace(/ /g,' L ')+' L '+x(a.length-1)+' '+(H-B)+' Z';
+ let labels=a.map((d,i)=>'<text class="chart-label" x="'+x(i)+'" y="'+(H-8)+'" text-anchor="middle">'+(i+1)+'</text>').join('');
+ $('chart').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Views by video chart"><defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#a66bff" stop-opacity=".35"/><stop offset="1" stop-color="#a66bff" stop-opacity="0"/></linearGradient></defs>'+grid+'<path class="chart-area" d="'+area+'"/><polyline class="chart-line" points="'+pts+'"/>'+a.map((d,i)=>'<circle cx="'+x(i)+'" cy="'+y(d.views)+'" r="4" fill="#d9b4ff" stroke="#6f3ca8" stroke-width="2"><title>'+esc(d.title)+': '+fmt(d.views)+' views</title></circle>').join('')+labels+'</svg>';
+}
+$('entry').addEventListener('submit',e=>{e.preventDefault();const n=id=>Number($(id).value||0);items.push({id:Date.now().toString(),title:$('title').value.trim(),date:$('date').value,theme:$('theme').value,views:n('viewsInput'),likes:n('likesInput'),comments:n('commentsInput'),shares:n('sharesInput'),saves:n('savesInput')});save();e.target.reset();$('date').value=new Date().toISOString().slice(0,10)});
+$('rows').addEventListener('click',e=>{const id=e.target.dataset.del;if(id){items=items.filter(x=>x.id!==id);save()}});
+$('export').addEventListener('click',()=>{const cols=['date','title','theme','views','likes','comments','shares','saves'];const csv=[cols.join(','),...items.map(x=>cols.map(k=>'"'+String(x[k]??'').replace(/"/g,'""')+'"').join(','))].join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='cheshire-code-analytics.csv';a.click();URL.revokeObjectURL(a.href)});
+$('clear').addEventListener('click',()=>{if(confirm('Delete all analytics saved in this browser?')){items=[];save()}});
+$('date').value=new Date().toISOString().slice(0,10);render();
+</script></body></html>
