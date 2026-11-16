@@ -39,7 +39,7 @@ jobs:
           import json
           from pathlib import Path
           data = json.loads(Path("analytics/data/publications.json").read_text(encoding="utf-8"))
-          posts = data.get("publications", data if isinstance(data, list) else [])
+          posts = data if isinstance(data, list) else data.get("publications", [])
           ids = [str(p.get("id", "")) for p in posts]
           assert all(ids), "Every publication must have an id"
           assert len(ids) == len(set(ids)), "Duplicate publication IDs found"
