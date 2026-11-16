@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "analytics/**"
+      - "data/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -32,6 +33,24 @@ jobs:
         run: |
           mkdir -p analytics/data
           cp data/publications.json analytics/data/publications.json
+      - name: Validate publication archive and dashboard JavaScript
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("analytics/data/publications.json").read_text(encoding="utf-8"))
+          posts = data.get("publications", data if isinstance(data, list) else [])
+          ids = [str(p.get("id", "")) for p in posts]
+          assert all(ids), "Every publication must have an id"
+          assert len(ids) == len(set(ids)), "Duplicate publication IDs found"
+          required = ("date", "title", "url", "views", "likes", "comments", "shares", "saves")
+          for post in posts:
+              missing = [key for key in required if key not in post]
+              assert not missing, f"{post.get('id')}: missing {missing}"
+          print(f"Validated {len(posts)} publication records")
+          PY
+          node -e "const fs=require('fs');const h=fs.readFileSync('analytics/index.html','utf8');const m=[...h.matchAll(/<script[^>]*>([\\s\\S]*?)<\\/script>/gi)];if(!m.length)throw Error('No inline JavaScript found');fs.writeFileSync('/tmp/cheshire-dashboard.js',m.map(x=>x[1]).join('\\n'));"
+          node --check /tmp/cheshire-dashboard.js
       - name: Upload analytics site
         uses: actions/upload-pages-artifact@v3
         with:
