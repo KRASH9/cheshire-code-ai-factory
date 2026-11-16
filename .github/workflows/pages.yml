@@ -28,6 +28,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+      - name: Include publication data in Pages artifact
+        run: |
+          mkdir -p analytics/data
+          cp data/publications.json analytics/data/publications.json
       - name: Upload analytics site
         uses: actions/upload-pages-artifact@v3
         with:
